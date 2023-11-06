@@ -1,0 +1,160 @@
+{
+  "main": {
+    "id": "ee2512ca20ff5925",
+    "type": "split",
+    "children": [
+      {
+        "id": "4ff0f65b789ec9b7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "065397b6997d5c64",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WIP/Diagnosing and fixing yaw drift.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a9b28720d2b4189d",
+    "type": "split",
+    "children": [
+      {
+        "id": "2755669a43c7010e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cabc1fc6eb10839e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "aecf79a966696d07",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5084fbf2d6b9bd38",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4043489923abcf86",
+    "type": "split",
+    "children": [
+      {
+        "id": "24e78c7339202c49",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ca3e6a84fb8a5d1f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "WIP/Diagnosing and fixing yaw drift.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5ccbd3f04059cf46",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "WIP/Diagnosing and fixing yaw drift.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "48009e21058ad8e9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "f8393ee6ab030e22",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "WIP/Diagnosing and fixing yaw drift.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "065397b6997d5c64",
+  "lastOpenFiles": [
+    "WIP/MAVLink Yaw Input.md",
+    "WIP/Diagnosing and fixing yaw drift.md",
+    "WIP/NMEA YAW Input.md",
+    "WIP/Surface Tracking.md",
+    "WIP/Better Handling.md",
+    "WIP/Additional buttons and axis.md",
+    "This is my personal knowledge base for development and using ArduSub.md",
+    "WIP"
+  ]
+}
