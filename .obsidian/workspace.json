@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "aafbec4d75592e1b",
+        "id": "4268d0db7739d3c6",
         "type": "tabs",
         "children": [
           {
-            "id": "774aba7c7a12d3c4",
+            "id": "4143e283b9ebc2af",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ArduSub/WIP/DVL-GPS integration.md",
+                "file": "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ArduSub/WIP/DVL-GPS integration.md",
+                "file": "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ArduSub/WIP/DVL-GPS integration.md",
+                "file": "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ArduSub/WIP/DVL-GPS integration.md"
+                "file": "ArduSub/WIP/Diagnosing and fixing yaw drift.md"
               }
             }
           }
@@ -146,19 +146,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "774aba7c7a12d3c4",
+  "active": "4143e283b9ebc2af",
   "lastOpenFiles": [
+    "ArduSub/WIP/MMC issues.md",
     "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
+    "ArduSub/WIP/MAVLink Yaw Input.md",
+    "ArduSub/WIP/Untitled.md",
     "ArduSub/WIP/Better Handling.md",
     "ArduSub/WIP/Additional buttons and axis.md",
-    "ArduSub/entrypoint.md",
-    "ArduSub/WIP/DVL-GPS integration.md",
-    "ArduSub/WIP/MAVLink Yaw Input.md",
-    "ArduSub/WIP/NMEA YAW Input.md",
+    "ArduSub/WIP/imgs/Pasted image 20231107205942.png",
+    "ArduSub/WIP/imgs/Pasted image 20231108111654.png",
     "ArduSub/WIP/Surface Tracking.md",
+    "ArduSub/WIP/DVL-GPS integration.md",
+    "ArduSub/entrypoint.md",
+    "ArduSub/WIP/NMEA YAW Input.md",
     "config.yaml",
-    "ArduSub/Pasted image 20231108111654.png",
-    "ArduSub/Pasted image 20231107205942.png",
     "Cameras/img/Pasted image 20231106162500.png",
     "ArduSub/ArduSub work and on-going investigations.md",
     "ArduSub/WIP/ArduSub latest is not building in autotest.md",
