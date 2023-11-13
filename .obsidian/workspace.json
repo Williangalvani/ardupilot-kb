@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "4ff0f65b789ec9b7",
+        "id": "aafbec4d75592e1b",
         "type": "tabs",
         "children": [
           {
-            "id": "065397b6997d5c64",
+            "id": "774aba7c7a12d3c4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WIP/Diagnosing and fixing yaw drift.md",
+                "file": "ArduSub/entrypoint.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "WIP/Diagnosing and fixing yaw drift.md",
+                "file": "ArduSub/entrypoint.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "WIP/Diagnosing and fixing yaw drift.md",
+                "file": "ArduSub/entrypoint.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "WIP/Diagnosing and fixing yaw drift.md"
+                "file": "ArduSub/entrypoint.md"
               }
             }
           }
@@ -146,15 +146,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "065397b6997d5c64",
+  "active": "774aba7c7a12d3c4",
   "lastOpenFiles": [
-    "WIP/MAVLink Yaw Input.md",
-    "WIP/Diagnosing and fixing yaw drift.md",
-    "WIP/NMEA YAW Input.md",
-    "WIP/Surface Tracking.md",
-    "WIP/Better Handling.md",
-    "WIP/Additional buttons and axis.md",
+    "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
+    "ArduSub/WIP/DVL-GPS integration.md",
+    "ArduSub/WIP/MAVLink Yaw Input.md",
+    "ArduSub/WIP/NMEA YAW Input.md",
+    "ArduSub/WIP/Surface Tracking.md",
+    "ArduSub/entrypoint.md",
+    "config.yaml",
+    "ArduSub/Pasted image 20231108111654.png",
+    "ArduSub/Pasted image 20231107205942.png",
+    "Cameras/img/Pasted image 20231106162500.png",
+    "ArduSub/ArduSub work and on-going investigations.md",
+    "ArduSub/WIP/Better Handling.md",
+    "ArduSub/WIP/ArduSub latest is not building in autotest.md",
+    "ArduSub/WIP/Additional buttons and axis.md",
+    "Cameras/OpenIPC.md",
+    "Cameras/img",
     "This is my personal knowledge base for development and using ArduSub.md",
-    "WIP"
+    "ArduSub/WIP/imgs/Pasted image 20231106153034.png",
+    "ArduSub/WIP/imgs",
+    "Cameras",
+    "ArduSub",
+    "ArduSub/WIP"
   ]
 }
