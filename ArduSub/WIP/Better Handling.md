@@ -1,1 +1,0 @@
-We should try to get better parameters for smoother, but not sluggish, operation
