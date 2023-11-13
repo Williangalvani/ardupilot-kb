@@ -24,5 +24,5 @@ MMC5883 driver has issues?
 
 Create HOME_LAT and HOME_LON parameters in ArduSub.
 
-https://github.com/ArduPilot/ardupilot/compare/master...Williangalvani:ardupilot:default_origin?expand=1
+[WIP](https://github.com/ArduPilot/ardupilot/compare/master...Williangalvani:ardupilot:default_origin?expand=1)
 

@@ -62,3 +62,9 @@ function update()
 end
 
 return update()
+```
+
+### NEXT:
+
+ - [ ] Improve the SITL GPS so it can properly simulate being underwater
+ - [ ] Write an autotest test for this script/feature

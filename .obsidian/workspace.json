@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ArduSub/entrypoint.md",
+                "file": "ArduSub/WIP/DVL-GPS integration.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ArduSub/entrypoint.md",
+                "file": "ArduSub/WIP/DVL-GPS integration.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ArduSub/entrypoint.md",
+                "file": "ArduSub/WIP/DVL-GPS integration.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ArduSub/entrypoint.md"
+                "file": "ArduSub/WIP/DVL-GPS integration.md"
               }
             }
           }
@@ -149,19 +149,19 @@
   "active": "774aba7c7a12d3c4",
   "lastOpenFiles": [
     "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
+    "ArduSub/WIP/Better Handling.md",
+    "ArduSub/WIP/Additional buttons and axis.md",
+    "ArduSub/entrypoint.md",
     "ArduSub/WIP/DVL-GPS integration.md",
     "ArduSub/WIP/MAVLink Yaw Input.md",
     "ArduSub/WIP/NMEA YAW Input.md",
     "ArduSub/WIP/Surface Tracking.md",
-    "ArduSub/entrypoint.md",
     "config.yaml",
     "ArduSub/Pasted image 20231108111654.png",
     "ArduSub/Pasted image 20231107205942.png",
     "Cameras/img/Pasted image 20231106162500.png",
     "ArduSub/ArduSub work and on-going investigations.md",
-    "ArduSub/WIP/Better Handling.md",
     "ArduSub/WIP/ArduSub latest is not building in autotest.md",
-    "ArduSub/WIP/Additional buttons and axis.md",
     "Cameras/OpenIPC.md",
     "Cameras/img",
     "This is my personal knowledge base for development and using ArduSub.md",
