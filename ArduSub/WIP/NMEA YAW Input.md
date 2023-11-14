@@ -12,4 +12,4 @@ SIM_GPS_TYPE 5
 Does it work with GPHDT alone?
 
 
-
+[autotest PR with GPS that provides GPHDT](https://github.com/ArduPilot/ardupilot/compare/master...Williangalvani:ardupilot:gps_yaw?expand=1)
