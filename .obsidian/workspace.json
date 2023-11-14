@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ArduSub/WIP/NMEA YAW Input.md",
+                "file": "ArduSub/entrypoint.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ArduSub/WIP/NMEA YAW Input.md",
+                "file": "ArduSub/entrypoint.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ArduSub/WIP/NMEA YAW Input.md",
+                "file": "ArduSub/entrypoint.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ArduSub/WIP/NMEA YAW Input.md"
+                "file": "ArduSub/entrypoint.md"
               }
             }
           }
@@ -148,19 +148,19 @@
   },
   "active": "4143e283b9ebc2af",
   "lastOpenFiles": [
+    "ArduSub/WIP/MMC issues.md",
+    "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
     "ArduSub/entrypoint.md",
     "ArduSub/ArduSub work and on-going investigations.md",
+    "ArduSub/WIP/NMEA YAW Input.md",
     "ArduSub/WIP/Surface Tracking.md",
     "ArduSub/WIP/Untitled.md",
-    "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
-    "ArduSub/WIP/MMC issues.md",
     "ArduSub/WIP/MAVLink Yaw Input.md",
     "ArduSub/WIP/Better Handling.md",
     "ArduSub/WIP/Additional buttons and axis.md",
     "ArduSub/WIP/imgs/Pasted image 20231107205942.png",
     "ArduSub/WIP/imgs/Pasted image 20231108111654.png",
     "ArduSub/WIP/DVL-GPS integration.md",
-    "ArduSub/WIP/NMEA YAW Input.md",
     "config.yaml",
     "Cameras/img/Pasted image 20231106162500.png",
     "ArduSub/WIP/ArduSub latest is not building in autotest.md",
