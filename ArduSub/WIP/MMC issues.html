@@ -5,7 +5,7 @@
         <head>
                 <!-- Page information -->
                 <meta charset="UTF-8" />
-                <meta name="node_id" content="dvl-gps integration">
+                <meta name="node_id" content="mmc issues">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="shortcut icon" href="../../favicon.ico" />
 
@@ -47,7 +47,7 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        const CURRENT_NODE = 'dvl-gps integration';
+                        const CURRENT_NODE = 'mmc issues';
                         const HTML_URL_PREFIX = '../..';
                         const PAGE_DEPTH = 2;
                 </script>
@@ -171,7 +171,7 @@
             }
         </script>
                                     <div class="graph_header_div requires_js">
-            <a id="graph_link" class="system-link" href="../../obs.html/graph/index.html?node=dvl-gps integration" title="Open fullpage Graph">
+            <a id="graph_link" class="system-link" href="../../obs.html/graph/index.html?node=mmc issues" title="Open fullpage Graph">
                     <img class="graph_header_div_svg" src = "../../obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
@@ -240,77 +240,11 @@
     </div>
 </div>
                         <div class="container">
-                                <embeddedtitle>DVL-GPS integration</embeddedtitle>
-<div class="content"><p>Clydes suggested params don't seem to work well with no gps: <br />
-<a href="https://github.com/bluerobotics/BlueOS-Water-Linked-DVL/issues/35#issue-1938971715" class="external-link">https://github.com/bluerobotics/BlueOS-Water-Linked-DVL/issues/35#issue-1938971715</a>   </p>
-<p>This script seems to work. but the EKF is ALWAYS consuming the gps.   </p>
-<div class="lang-general">
-
-<div class="codehilite"><pre><span></span><code>local PARAM_TABLE_KEY = 120
-local PARAM_TABLE_PREFIX = &#39;DVL_&#39;
-
-local GPS_THRESHOLD = 0.5
-
-local ek3_src1_posxy = param:get(&#39;EK3_SRC1_POSXY&#39;)
-local ek3_src1_velxy = param:get(&#39;EK3_SRC1_VELXY&#39;)
-local ek3_src1_posz = param:get(&#39;EK3_SRC1_POSZ&#39;)
-local ek3_src1_velz = param:get(&#39;EK3_SRC1_VELZ&#39;)
-
--- TODO: do not change this, just alert the user
-ek3_src1_posxy = 6
-ek3_src1_velxy = 6
-ek3_src1_posz = 1
-ek3_src1_velz = 0
-
-local ek3_src2_posxy = param:get(&#39;EK3_SRC1_POSXY&#39;)
-local ek3_src2_velxy = param:get(&#39;EK3_SRC1_VELXY&#39;)
-local ek3_src2_posz = param:get(&#39;EK3_SRC1_POSZ&#39;)
-local ek3_src2_velz = param:get(&#39;EK3_SRC1_VELZ&#39;)
-
--- TODO: do not change this, just alert the user
-ek3_src2_posxy = 3
-ek3_src2_velxy = 3
-ek3_src2_posz = 1
-ek3_src2_velz = 0
-
-
-
--- the main update function
-function update()
-  local gps_speed_accuracy = gps:speed_accuracy(gps:primary_sensor())
-  if gps_speed_accuracy == nil then
-    gcs:send_named_float(&#39;GpsSpeed&#39;, 10000)
-    return update, 100
-  else
-    gcs:send_named_float(&#39;GpsSpeed&#39;, gps_speed_accuracy)
-  end
-  local wanted_source = 0
-  if gps_speed_accuracy &lt; GPS_THRESHOLD then
-    wanted_source = 1
-    if not ahrs:get_origin() then
-        ahrs:set_origin(ahrs:get_location())
-    end
-  else
-    wanted_source = 0
-  end
-  if ahrs:get_posvelyaw_source_set() ~= wanted_source then
-    ahrs:set_posvelyaw_source_set(wanted_source)
-  end
-  gcs:send_named_float(&#39;EkfSource&#39;, ahrs:get_posvelyaw_source_set())
-  return update, 100
-end
-
-return update()
-</code></pre></div>
-
-
-</div>
-
-<h3 id="next">NEXT:</h3>
-<ul>
-<li>[ ] Improve the SITL GPS so it can properly simulate being underwater   </li>
-<li>[ ] Write an autotest test for this script/feature</li>
-</ul></div>
+                                <embeddedtitle>MMC issues</embeddedtitle>
+<div class="content"><h3 id="investigations">Investigations:</h3>
+<p>During log analysis, we found a potential glitch in the MMC5883 driver. <br />
+This needs further investigation:   </p>
+<p><img alt="" src="../../ArduSub/WIP/imgs/Pasted%20image%2020231108111654.png" /></p></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -325,13 +259,13 @@ return update()
 
 </div>
 <div class="graph requires_js ">
-    <div id="A306473378113211846723368138365173408647{level}" class="graph_div"></div>
+    <div id="A309084220757536388002293510192436452766{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B306473378113211846723368138365173408647{level}" level="{level}" note_temp_id="306473378113211846723368138365173408647" onclick="window.ObsHtmlGraph.run(this, '306473378113211846723368138365173408647', 'dvl-gps integration');">
+        <button class="graph_button graph_show_button" id="B309084220757536388002293510192436452766{level}" level="{level}" note_temp_id="309084220757536388002293510192436452766" onclick="window.ObsHtmlGraph.run(this, '309084220757536388002293510192436452766', 'mmc issues');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C306473378113211846723368138365173408647{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C309084220757536388002293510192436452766{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
