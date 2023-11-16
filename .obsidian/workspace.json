@@ -13,13 +13,54 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ArduSub/entrypoint.md",
+                "file": "ArduSub/WIP/MMC issues.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "116d5079fccafcb7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Camera stuff/OpenIPC boot log.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "823a75dde99a4289",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Camera stuff/OpenIPC stuff.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "857a6ee693e4d6e7",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "4c2e2dc654082dcb",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ArduSub/entrypoint.md",
+                "file": "Camera stuff/OpenIPC stuff.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ArduSub/entrypoint.md",
+                "file": "Camera stuff/OpenIPC stuff.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ArduSub/entrypoint.md"
+                "file": "Camera stuff/OpenIPC stuff.md"
               }
             }
           }
@@ -146,17 +187,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4143e283b9ebc2af",
+  "active": "823a75dde99a4289",
   "lastOpenFiles": [
-    "ArduSub/WIP/MMC issues.md",
-    "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
     "ArduSub/entrypoint.md",
-    "ArduSub/ArduSub work and on-going investigations.md",
-    "ArduSub/WIP/NMEA YAW Input.md",
-    "ArduSub/WIP/Surface Tracking.md",
-    "ArduSub/WIP/Untitled.md",
-    "ArduSub/WIP/MAVLink Yaw Input.md",
+    "ArduSub/TODO/support bar02.md",
+    "Camera stuff/OpenIPC stuff.md",
+    "ArduSub/TODO",
+    "Camera stuff/original boot log.md",
+    "Camera stuff/OpenIPC boot log.md",
+    "Pasted image 20231115002509.png",
     "ArduSub/WIP/Better Handling.md",
+    "ArduSub/WIP/MAVLink Yaw Input.md",
+    "ArduSub/WIP/Surface Tracking.md",
+    "ArduSub/WIP/NMEA YAW Input.md",
+    "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
+    "Camera stuff",
+    "ArduSub/WIP/MMC issues.md",
+    "ArduSub/ArduSub work and on-going investigations.md",
+    "ArduSub/WIP/Untitled.md",
     "ArduSub/WIP/Additional buttons and axis.md",
     "ArduSub/WIP/imgs/Pasted image 20231107205942.png",
     "ArduSub/WIP/imgs/Pasted image 20231108111654.png",

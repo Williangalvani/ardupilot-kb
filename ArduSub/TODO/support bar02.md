@@ -1,0 +1,1 @@
+There's a PROM bit that we use for differentiation [in our Arduino library](https://github.com/bluerobotics/BlueRobotics_MS5837_Library/blob/master/src/MS5837.cpp#L60-L74), which [AP_Baro](https://github.com/ArduPilot/ardupilot/blob/Sub-4.1/libraries/AP_Baro/AP_Baro_MS5611.cpp#L204) currently just ignores.

@@ -1,4 +1,5 @@
 
+## WIP:
 
 [[Additional buttons and axis]]
 
@@ -14,4 +15,10 @@
 
 [[Diagnosing and fixing yaw drift]]
 
+
+
+## TODO
+
 [[MMC issues]]
+
+[[support bar02]]
