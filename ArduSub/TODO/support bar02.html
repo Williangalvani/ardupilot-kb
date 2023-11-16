@@ -5,7 +5,7 @@
         <head>
                 <!-- Page information -->
                 <meta charset="UTF-8" />
-                <meta name="node_id" content="diagnosing and fixing yaw drift">
+                <meta name="node_id" content="support bar02">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="shortcut icon" href="../../favicon.ico" />
 
@@ -47,7 +47,7 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        const CURRENT_NODE = 'diagnosing and fixing yaw drift';
+                        const CURRENT_NODE = 'support bar02';
                         const HTML_URL_PREFIX = '../..';
                         const PAGE_DEPTH = 2;
                 </script>
@@ -171,7 +171,7 @@
             }
         </script>
                                     <div class="graph_header_div requires_js">
-            <a id="graph_link" class="system-link" href="../../obs.html/graph/index.html?node=diagnosing and fixing yaw drift" title="Open fullpage Graph">
+            <a id="graph_link" class="system-link" href="../../obs.html/graph/index.html?node=support bar02" title="Open fullpage Graph">
                     <img class="graph_header_div_svg" src = "../../obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
@@ -246,17 +246,8 @@
     </div>
 </div>
                         <div class="container">
-                                <embeddedtitle>Diagnosing and fixing yaw drift</embeddedtitle>
-<div class="content"><h3 id="chat-with-tridge">Chat with Tridge:</h3>
-<p>It is clearly visible in some logs: <br />
-<img alt="" src="../../ArduSub/WIP/imgs/Pasted%20image%2020231106153034.png" />   </p>
-<p>We need to provide location for the EKF to be happy. Provide a parameter for backup location.   </p>
-<p><img alt="" src="../../ArduSub/WIP/imgs/Pasted%20image%2020231107205942.png" />   </p>
-<p>We need to deal with magnetic interference, tuning for all motors needs to me implemented   </p>
-<p>We can try decreasing the MAG NSE parameters, or gates, to rely heavier on compass than Gyros   </p>
-<h2 id="the-proposed-solution">The proposed solution</h2>
-<p>Create HOME_LAT and HOME_LON parameters in ArduSub.   </p>
-<p><a href="https://github.com/ArduPilot/ardupilot/compare/master...Williangalvani:ardupilot:default_origin?expand=1" class="external-link">WIP branch</a></p></div>
+                                <embeddedtitle>support bar02</embeddedtitle>
+<div class="content"><p>There's a PROM bit that we use for differentiation <a href="https://github.com/bluerobotics/BlueRobotics_MS5837_Library/blob/master/src/MS5837.cpp#L60-L74" class="external-link">in our Arduino library</a>, which <a href="https://github.com/ArduPilot/ardupilot/blob/Sub-4.1/libraries/AP_Baro/AP_Baro_MS5611.cpp#L204" class="external-link">AP_Baro</a> currently just ignores.</p></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -271,13 +262,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A69386020462309218546165001367788508000{level}" class="graph_div"></div>
+    <div id="A258378053493198377436433821884408266018{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B69386020462309218546165001367788508000{level}" level="{level}" note_temp_id="69386020462309218546165001367788508000" onclick="window.ObsHtmlGraph.run(this, '69386020462309218546165001367788508000', 'diagnosing and fixing yaw drift');">
+        <button class="graph_button graph_show_button" id="B258378053493198377436433821884408266018{level}" level="{level}" note_temp_id="258378053493198377436433821884408266018" onclick="window.ObsHtmlGraph.run(this, '258378053493198377436433821884408266018', 'support bar02');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C69386020462309218546165001367788508000{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C258378053493198377436433821884408266018{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
