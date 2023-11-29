@@ -18,6 +18,10 @@ Create HOME_LAT and HOME_LON parameters in ArduSub.
 [WIP branch](https://github.com/ArduPilot/ardupilot/compare/master...Williangalvani:ardupilot:default_origin?expand=1)
 
 
+## New solution:
+[allow estimating earth frame fields with no gps](https://github.com/ArduPilot/ardupilot/compare/master...Williangalvani:ardupilot:allow_mag_estimation?expand=1)
+
+
 These are apparently already use in AP_Beacon.
 
 this is apparently easily doable with a script, which should help diagnosing

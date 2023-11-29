@@ -3,6 +3,6 @@ We still need to add support for the additional axis.
 
 ### Next steps
 
-- [ ] Open PR in ardupilot/mavlink for bringing the extensions to Ardupilot
+- [x] Open PR in ardupilot/mavlink for bringing the extensions to Ardupilot
 - [ ] Add support for the additional axis
 - [ ] Open PR with the linked branch

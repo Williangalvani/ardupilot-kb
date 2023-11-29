@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ArduSub/WIP/DVL-GPS integration.md",
+                "file": "ArduSub/WIP/NMEA YAW Input.md",
                 "mode": "source",
                 "source": false
               }
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ArduSub/WIP/DVL-GPS integration.md",
+                "file": "ArduSub/WIP/NMEA YAW Input.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ArduSub/WIP/DVL-GPS integration.md",
+                "file": "ArduSub/WIP/NMEA YAW Input.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ArduSub/WIP/DVL-GPS integration.md"
+                "file": "ArduSub/WIP/NMEA YAW Input.md"
               }
             }
           }
@@ -168,24 +168,28 @@
   },
   "active": "116d5079fccafcb7",
   "lastOpenFiles": [
+    "ArduSub/WIP/imgs/Pasted image 20231129111657.png",
     "ArduSub/WIP/NMEA YAW Input.md",
-    "ArduSub/WIP/MMC issues.md",
+    "Pasted image 20231129111647.png",
+    "ArduSub/WIP/MAVLink Yaw Input.md",
+    "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
+    "ArduSub/WIP/Additional buttons and axis.md",
+    "bluesim/Cloud-based sim.md",
+    "bluesim",
     "ArduSub/WIP/DVL-GPS integration.md",
+    "ArduSub/WIP/MMC issues.md",
+    "ArduSub/WIP/Better Handling.md",
     "Blueos/compass calibration.md",
     "Blueos/Check if mavlink-router has tlog now.md",
     "Blueos",
     "ArduSub/WIP/Surface Tracking.md",
-    "ArduSub/WIP/MAVLink Yaw Input.md",
-    "ArduSub/WIP/Additional buttons and axis.md",
-    "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
     "Camera stuff/OpenIPC stuff.md",
     "Camera stuff/original boot log.md",
     "Camera stuff/OpenIPC boot log.md",
     "ArduSub/entrypoint.md",
     "ArduSub/TODO/support bar02.md",
     "ArduSub/TODO",
-    "Pasted image 20231115002509.png",
-    "ArduSub/WIP/Better Handling.md",
+    "ArduSub/WIP/imgs/Pasted image 20231115002509.png",
     "Camera stuff",
     "ArduSub/ArduSub work and on-going investigations.md",
     "ArduSub/WIP/Untitled.md",
