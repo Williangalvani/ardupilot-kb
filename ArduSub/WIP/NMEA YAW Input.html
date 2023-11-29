@@ -223,6 +223,7 @@
 				<li><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231106153034.png"  class="external-link">Pasted image 20231106153034</a></li>
 				<li><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231107205942.png"  class="external-link">Pasted image 20231107205942</a></li>
 				<li><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231108111654.png"  class="external-link">Pasted image 20231108111654</a></li>
+				<li><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231129111657.png"  class="external-link">Pasted image 20231129111657</a></li>
 			</ul>
 		</div>
 		<ul class="dir-list">
@@ -248,7 +249,7 @@
                         <div class="container">
                                 <embeddedtitle>NMEA YAW Input</embeddedtitle>
 <div class="content"><p><a href="https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_GPS/AP_GPS_NMEA.cpp#L378-L379" class="external-link">GPHDT and GPTHS are supported </a>   </p>
-<p>in order to use it:   </p>
+<p>in order to use it (in Simulation):   </p>
 <div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code>EK3_SRC1_YAW 2
@@ -259,8 +260,19 @@ SIM_GPS_TYPE 5
 
 </div>
 
-<p>Does it work with GPHDT alone?   </p>
-<p><a href="https://github.com/ArduPilot/ardupilot/compare/master...Williangalvani:ardupilot:gps_yaw?expand=1" class="external-link">autotest PR with GPS that provides GPHDT</a></p></div>
+<p>Does it work with GPHDT alone? I don't think so. The GPS will not be considered "Healthy" in order for it to be consumed.   </p>
+<p><a href="https://github.com/ArduPilot/ardupilot/compare/master...Williangalvani:ardupilot:gps_yaw?expand=1" class="external-link">autotest PR with GPS that provides GPHDT</a>   </p>
+<p>To test it with BlueOS and Navigator:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>SERIAL2_PROTOCOL to GPS
+GPS_TYPE to NMEA
+</code></pre></div>
+
+
+</div>
+
+<p><img alt="" src="../../ArduSub/WIP/imgs/Pasted%20image%2020231129111657.png" /></p></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -275,13 +287,13 @@ SIM_GPS_TYPE 5
 
 </div>
 <div class="graph requires_js ">
-    <div id="A277068530185908248373849116786643953569{level}" class="graph_div"></div>
+    <div id="A7718644738336586347784504802856547405{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B277068530185908248373849116786643953569{level}" level="{level}" note_temp_id="277068530185908248373849116786643953569" onclick="window.ObsHtmlGraph.run(this, '277068530185908248373849116786643953569', 'nmea yaw input');">
+        <button class="graph_button graph_show_button" id="B7718644738336586347784504802856547405{level}" level="{level}" note_temp_id="7718644738336586347784504802856547405" onclick="window.ObsHtmlGraph.run(this, '7718644738336586347784504802856547405', 'nmea yaw input');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C277068530185908248373849116786643953569{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C7718644738336586347784504802856547405{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
