@@ -25,3 +25,19 @@ Create HOME_LAT and HOME_LON parameters in ArduSub.
 These are apparently already use in AP_Beacon.
 
 this is apparently easily doable with a script, which should help diagnosing
+
+
+
+from devcall:
+
+line 669 or NAVEKF control
+
+check logs, look if z gyro bias is updating
+
+this is on old drifting logs
+
+
+make an autotest. disable gps test
+add z gyro bias 
+
+

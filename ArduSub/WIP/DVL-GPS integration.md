@@ -7,12 +7,13 @@ This script seems to work, needs some more testing and validation. I'll try it i
 
 ```
 -- This scripts handles switching between surface GPS and DVL.
--- It creates a parameter DVL_GPS_THR, which is the maximum gps_speed_accuracy
+-- It creates a parameter DVL_HDOP_THR, which is the maximum gps_speed_accuracy
 -- we accept from the GPS to use it as a source.
--- As soon as the GPS accuracy is above that value, we switch back to using the DVL
+-- As soon as the GPS HDOP is under a threshold for a sustained time,
+we switch to using its position
 -- As the DVL is much noisier than the DVL, our positioning error is that of the GPS position
 -- plus the eventual DVL drift
--- Tested on Sub 4.5-dev as of Nov 22 2023
+-- Tested on Sub 4.5-dev as of Dec 18 2023
 
 local PARAM_TABLE_KEY = 90
 local PARAM_TABLE_PREFIX = 'DVL_'
@@ -34,7 +35,7 @@ end
 
 assert(param:add_table(PARAM_TABLE_KEY, PARAM_TABLE_PREFIX, 32), 'could not add param table')
 
-local gps_threshold = bind_add_param('GPS_THR', 1, 0.5)
+local hdop_threshold = bind_add_param('HDOP_THR', 1, 80)
 
 -- Setup ekf sources
 local ek3_src1_posxy = bind_param('EK3_SRC1_POSXY')
@@ -55,7 +56,7 @@ local ek3_src2_velz = bind_param('EK3_SRC2_VELZ')
 
 -- TODO: do not change this, just alert the user
 ek3_src2_posxy:set(3)
-ek3_src2_velxy:set(6) -- not 100% sure of this one
+ek3_src2_velxy:set(6)
 ek3_src2_posz:set(1)
 ek3_src2_velz:set(0)
 
@@ -63,27 +64,38 @@ local options = bind_param('EK3_SRC_OPTIONS')
 options:set(0)
 
 
--- the main update function
+local hdop_below_threshold_time = 0 -- Timer for tracking time below threshold
+
 function update()
-  local gps_speed_accuracy = gps:speed_accuracy(gps:primary_sensor())
-  if gps_speed_accuracy == nil then
-    gcs:send_named_float('GpsSpeed', 10000)
+  local gps_hdop = gps:get_hdop(gps:primary_sensor())  -- Fetch HDOP value using get_hdop
+  if gps_hdop == nil then
+    gcs:send_named_float('GpsHDOP', 10000)
+    hdop_below_threshold_time = 0  -- Reset timer if no HDOP value
     return update, 100
   else
-    gcs:send_named_float('GpsSpeed', gps_speed_accuracy)
+    gcs:send_named_float('GpsHDOP', gps_hdop)
   end
+
+  if gps_hdop < hdop_threshold:get() then
+    -- Increment timer if HDOP is below threshold
+    hdop_below_threshold_time = hdop_below_threshold_time + 100
+  else
+    -- Reset timer if HDOP goes above threshold
+    hdop_below_threshold_time = 0
+  end
+
   local wanted_source = 0
-  if gps_speed_accuracy < gps_threshold:get() then
+  if hdop_below_threshold_time >= 5000 then  -- Check if timer has reached 5 seconds
     wanted_source = 1
-    if not ahrs:get_origin() then
+    if not ahrs:get_origin() and ahrs:get_location() then
         ahrs:set_origin(ahrs:get_location())
     end
-  else
-    wanted_source = 0
   end
+
   if ahrs:get_posvelyaw_source_set() ~= wanted_source then
     ahrs:set_posvelyaw_source_set(wanted_source)
   end
+
   gcs:send_named_float('EkfSource', ahrs:get_posvelyaw_source_set())
   return update, 100
 end
@@ -91,6 +103,7 @@ end
 return update()
 ```
 
+[sample log](00000253.bin)
 ### NEXT:
 
  - [ ] Improve the SITL GPS so it can properly simulate being underwater
