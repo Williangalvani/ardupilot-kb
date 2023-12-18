@@ -227,7 +227,6 @@
 			</ul>
 		</div>
 		<ul class="dir-list">
-			<li><a class="" href="../ArduSub/WIP/Additional buttons and axis.html"  >Additional buttons and axis</a></li>
 			<li><a class="" href="../ArduSub/WIP/Better Handling.html"  >Better Handling</a></li>
 			<li><a class="" href="../ArduSub/WIP/DVL-GPS integration.html"  >DVL-GPS integration</a></li>
 			<li><a class="" href="../ArduSub/WIP/Diagnosing and fixing yaw drift.html"  >Diagnosing and fixing yaw drift</a></li>
@@ -235,6 +234,12 @@
 			<li><a class="" href="../ArduSub/WIP/MMC issues.html"  >MMC issues</a></li>
 			<li><a class="" href="../ArduSub/WIP/NMEA YAW Input.html"  >NMEA YAW Input</a></li>
 			<li><a class="" href="../ArduSub/WIP/Surface Tracking.html"  >Surface Tracking</a></li>
+		</ul>
+	</div>
+	<button id="folder-5" class="dir-button" onclick="toggle_dir(this.id)">done</button>
+	<div id="folder-container-5" class="dir-container requires_js " path="../ArduSub/done">
+		<ul class="dir-list">
+			<li><a class="" href="../ArduSub/done/Additional buttons and axis.html"  >Additional buttons and axis</a></li>
 		</ul>
 	</div>
 	<ul class="dir-list">
@@ -261,7 +266,13 @@
 <h2 id="new-solution">New solution:</h2>
 <p><a href="https://github.com/ArduPilot/ardupilot/compare/master...Williangalvani:ardupilot:allow_mag_estimation?expand=1" class="external-link">allow estimating earth frame fields with no gps</a>   </p>
 <p>These are apparently already use in AP_Beacon.   </p>
-<p>this is apparently easily doable with a script, which should help diagnosing</p></div>
+<p>this is apparently easily doable with a script, which should help diagnosing   </p>
+<p>from devcall:   </p>
+<p>line 669 or NAVEKF control   </p>
+<p>check logs, look if z gyro bias is updating   </p>
+<p>this is on old drifting logs   </p>
+<p>make an autotest. disable gps test <br />
+add z gyro bias</p></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -276,13 +287,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A87998407898026333154597917390950943161{level}" class="graph_div"></div>
+    <div id="A112625322233701429426665784856110177028{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B87998407898026333154597917390950943161{level}" level="{level}" note_temp_id="87998407898026333154597917390950943161" onclick="window.ObsHtmlGraph.run(this, '87998407898026333154597917390950943161', 'diagnosing and fixing yaw drift');">
+        <button class="graph_button graph_show_button" id="B112625322233701429426665784856110177028{level}" level="{level}" note_temp_id="112625322233701429426665784856110177028" onclick="window.ObsHtmlGraph.run(this, '112625322233701429426665784856110177028', 'diagnosing and fixing yaw drift');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C87998407898026333154597917390950943161{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C112625322233701429426665784856110177028{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

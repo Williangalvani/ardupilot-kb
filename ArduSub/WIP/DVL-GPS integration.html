@@ -227,7 +227,6 @@
 			</ul>
 		</div>
 		<ul class="dir-list">
-			<li><a class="" href="../ArduSub/WIP/Additional buttons and axis.html"  >Additional buttons and axis</a></li>
 			<li><a class="" href="../ArduSub/WIP/Better Handling.html"  >Better Handling</a></li>
 			<li><a class="" href="../ArduSub/WIP/DVL-GPS integration.html"  >DVL-GPS integration</a></li>
 			<li><a class="" href="../ArduSub/WIP/Diagnosing and fixing yaw drift.html"  >Diagnosing and fixing yaw drift</a></li>
@@ -235,6 +234,12 @@
 			<li><a class="" href="../ArduSub/WIP/MMC issues.html"  >MMC issues</a></li>
 			<li><a class="" href="../ArduSub/WIP/NMEA YAW Input.html"  >NMEA YAW Input</a></li>
 			<li><a class="" href="../ArduSub/WIP/Surface Tracking.html"  >Surface Tracking</a></li>
+		</ul>
+	</div>
+	<button id="folder-5" class="dir-button" onclick="toggle_dir(this.id)">done</button>
+	<div id="folder-container-5" class="dir-container requires_js " path="../ArduSub/done">
+		<ul class="dir-list">
+			<li><a class="" href="../ArduSub/done/Additional buttons and axis.html"  >Additional buttons and axis</a></li>
 		</ul>
 	</div>
 	<ul class="dir-list">
@@ -254,12 +259,13 @@
 <div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code><span class="o">--</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">scripts</span><span class="w"> </span><span class="n">handles</span><span class="w"> </span><span class="n">switching</span><span class="w"> </span><span class="n">between</span><span class="w"> </span><span class="n">surface</span><span class="w"> </span><span class="n">GPS</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">DVL</span><span class="o">.</span>
-<span class="o">--</span><span class="w"> </span><span class="n">It</span><span class="w"> </span><span class="n">creates</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="n">DVL_GPS_THR</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="n">gps_speed_accuracy</span>
+<span class="o">--</span><span class="w"> </span><span class="n">It</span><span class="w"> </span><span class="n">creates</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="n">DVL_HDOP_THR</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="n">gps_speed_accuracy</span>
 <span class="o">--</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">accept</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">GPS</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">source</span><span class="o">.</span>
-<span class="o">--</span><span class="w"> </span><span class="n">As</span><span class="w"> </span><span class="n">soon</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">GPS</span><span class="w"> </span><span class="n">accuracy</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">above</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">switch</span><span class="w"> </span><span class="n">back</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">DVL</span>
+<span class="o">--</span><span class="w"> </span><span class="n">As</span><span class="w"> </span><span class="n">soon</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">GPS</span><span class="w"> </span><span class="n">HDOP</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">under</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">threshold</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">sustained</span><span class="w"> </span><span class="n">time</span><span class="p">,</span>
+<span class="n">we</span><span class="w"> </span><span class="n">switch</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">position</span>
 <span class="o">--</span><span class="w"> </span><span class="n">As</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">DVL</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">much</span><span class="w"> </span><span class="n">noisier</span><span class="w"> </span><span class="n">than</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">DVL</span><span class="p">,</span><span class="w"> </span><span class="n">our</span><span class="w"> </span><span class="n">positioning</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">GPS</span><span class="w"> </span><span class="n">position</span>
 <span class="o">--</span><span class="w"> </span><span class="n">plus</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">eventual</span><span class="w"> </span><span class="n">DVL</span><span class="w"> </span><span class="n">drift</span>
-<span class="o">--</span><span class="w"> </span><span class="n">Tested</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">Sub</span><span class="w"> </span><span class="mf">4.5</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Nov</span><span class="w"> </span><span class="mi">22</span><span class="w"> </span><span class="mi">2023</span>
+<span class="o">--</span><span class="w"> </span><span class="n">Tested</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">Sub</span><span class="w"> </span><span class="mf">4.5</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Dec</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="mi">2023</span>
 
 <span class="n">local</span><span class="w"> </span><span class="n">PARAM_TABLE_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span>
 <span class="n">local</span><span class="w"> </span><span class="n">PARAM_TABLE_PREFIX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DVL_&#39;</span>
@@ -281,7 +287,7 @@
 
 <span class="nb">assert</span><span class="p">(</span><span class="n">param</span><span class="p">:</span><span class="n">add_table</span><span class="p">(</span><span class="n">PARAM_TABLE_KEY</span><span class="p">,</span><span class="w"> </span><span class="n">PARAM_TABLE_PREFIX</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;could not add param table&#39;</span><span class="p">)</span>
 
-<span class="n">local</span><span class="w"> </span><span class="n">gps_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bind_add_param</span><span class="p">(</span><span class="s1">&#39;GPS_THR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">local</span><span class="w"> </span><span class="n">hdop_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bind_add_param</span><span class="p">(</span><span class="s1">&#39;HDOP_THR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">)</span>
 
 <span class="o">--</span><span class="w"> </span><span class="n">Setup</span><span class="w"> </span><span class="n">ekf</span><span class="w"> </span><span class="n">sources</span>
 <span class="n">local</span><span class="w"> </span><span class="n">ek3_src1_posxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bind_param</span><span class="p">(</span><span class="s1">&#39;EK3_SRC1_POSXY&#39;</span><span class="p">)</span>
@@ -302,7 +308,7 @@
 
 <span class="o">--</span><span class="w"> </span><span class="n">TODO</span><span class="p">:</span><span class="w"> </span><span class="n">do</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">change</span><span class="w"> </span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">just</span><span class="w"> </span><span class="n">alert</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">user</span>
 <span class="n">ek3_src2_posxy</span><span class="p">:</span><span class="n">set</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">ek3_src2_velxy</span><span class="p">:</span><span class="n">set</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="mi">100</span><span class="o">%</span><span class="w"> </span><span class="n">sure</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">one</span>
+<span class="n">ek3_src2_velxy</span><span class="p">:</span><span class="n">set</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">ek3_src2_posz</span><span class="p">:</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ek3_src2_velz</span><span class="p">:</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
@@ -310,27 +316,38 @@
 <span class="n">options</span><span class="p">:</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 
-<span class="o">--</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="n">function</span>
+<span class="n">local</span><span class="w"> </span><span class="n">hdop_below_threshold_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Timer</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">tracking</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="n">below</span><span class="w"> </span><span class="n">threshold</span>
+
 <span class="n">function</span><span class="w"> </span><span class="n">update</span><span class="p">()</span>
-<span class="w">  </span><span class="n">local</span><span class="w"> </span><span class="n">gps_speed_accuracy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gps</span><span class="p">:</span><span class="n">speed_accuracy</span><span class="p">(</span><span class="n">gps</span><span class="p">:</span><span class="n">primary_sensor</span><span class="p">())</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">gps_speed_accuracy</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">nil</span><span class="w"> </span><span class="n">then</span>
-<span class="w">    </span><span class="n">gcs</span><span class="p">:</span><span class="n">send_named_float</span><span class="p">(</span><span class="s1">&#39;GpsSpeed&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span>
+<span class="w">  </span><span class="n">local</span><span class="w"> </span><span class="n">gps_hdop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gps</span><span class="p">:</span><span class="n">get_hdop</span><span class="p">(</span><span class="n">gps</span><span class="p">:</span><span class="n">primary_sensor</span><span class="p">())</span><span class="w">  </span><span class="o">--</span><span class="w"> </span><span class="n">Fetch</span><span class="w"> </span><span class="n">HDOP</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">get_hdop</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">gps_hdop</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">nil</span><span class="w"> </span><span class="n">then</span>
+<span class="w">    </span><span class="n">gcs</span><span class="p">:</span><span class="n">send_named_float</span><span class="p">(</span><span class="s1">&#39;GpsHDOP&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span>
+<span class="w">    </span><span class="n">hdop_below_threshold_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="o">--</span><span class="w"> </span><span class="n">Reset</span><span class="w"> </span><span class="n">timer</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">HDOP</span><span class="w"> </span><span class="n">value</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">update</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span>
 <span class="w">  </span><span class="k">else</span>
-<span class="w">    </span><span class="n">gcs</span><span class="p">:</span><span class="n">send_named_float</span><span class="p">(</span><span class="s1">&#39;GpsSpeed&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">gps_speed_accuracy</span><span class="p">)</span>
+<span class="w">    </span><span class="n">gcs</span><span class="p">:</span><span class="n">send_named_float</span><span class="p">(</span><span class="s1">&#39;GpsHDOP&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">gps_hdop</span><span class="p">)</span>
 <span class="w">  </span><span class="n">end</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">gps_hdop</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hdop_threshold</span><span class="p">:</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="n">then</span>
+<span class="w">    </span><span class="o">--</span><span class="w"> </span><span class="n">Increment</span><span class="w"> </span><span class="n">timer</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">HDOP</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">below</span><span class="w"> </span><span class="n">threshold</span>
+<span class="w">    </span><span class="n">hdop_below_threshold_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hdop_below_threshold_time</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">    </span><span class="o">--</span><span class="w"> </span><span class="n">Reset</span><span class="w"> </span><span class="n">timer</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">HDOP</span><span class="w"> </span><span class="n">goes</span><span class="w"> </span><span class="n">above</span><span class="w"> </span><span class="n">threshold</span>
+<span class="w">    </span><span class="n">hdop_below_threshold_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="n">end</span>
+
 <span class="w">  </span><span class="n">local</span><span class="w"> </span><span class="n">wanted_source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">gps_speed_accuracy</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">gps_threshold</span><span class="p">:</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="n">then</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">hdop_below_threshold_time</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="n">then</span><span class="w">  </span><span class="o">--</span><span class="w"> </span><span class="n">Check</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">timer</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">reached</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="n">seconds</span>
 <span class="w">    </span><span class="n">wanted_source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">ahrs</span><span class="p">:</span><span class="n">get_origin</span><span class="p">()</span><span class="w"> </span><span class="n">then</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">ahrs</span><span class="p">:</span><span class="n">get_origin</span><span class="p">()</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">ahrs</span><span class="p">:</span><span class="n">get_location</span><span class="p">()</span><span class="w"> </span><span class="n">then</span>
 <span class="w">        </span><span class="n">ahrs</span><span class="p">:</span><span class="n">set_origin</span><span class="p">(</span><span class="n">ahrs</span><span class="p">:</span><span class="n">get_location</span><span class="p">())</span>
 <span class="w">    </span><span class="n">end</span>
-<span class="w">  </span><span class="k">else</span>
-<span class="w">    </span><span class="n">wanted_source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
 <span class="w">  </span><span class="n">end</span>
+
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">ahrs</span><span class="p">:</span><span class="n">get_posvelyaw_source_set</span><span class="p">()</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="n">wanted_source</span><span class="w"> </span><span class="n">then</span>
 <span class="w">    </span><span class="n">ahrs</span><span class="p">:</span><span class="n">set_posvelyaw_source_set</span><span class="p">(</span><span class="n">wanted_source</span><span class="p">)</span>
 <span class="w">  </span><span class="n">end</span>
+
 <span class="w">  </span><span class="n">gcs</span><span class="p">:</span><span class="n">send_named_float</span><span class="p">(</span><span class="s1">&#39;EkfSource&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ahrs</span><span class="p">:</span><span class="n">get_posvelyaw_source_set</span><span class="p">())</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">update</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span>
 <span class="n">end</span>
@@ -341,6 +358,9 @@
 
 </div>
 
+<blockquote>
+<p><strong>obsidian-html error:</strong> Error including file or not a markdown file 00000253.bin.   </p>
+</blockquote>
 <h3 id="next">NEXT:</h3>
 <ul>
 <li>[ ] Improve the SITL GPS so it can properly simulate being underwater   </li>
@@ -360,13 +380,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A136930158801720164314675243447204392041{level}" class="graph_div"></div>
+    <div id="A112188639998348656991941982701622449521{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B136930158801720164314675243447204392041{level}" level="{level}" note_temp_id="136930158801720164314675243447204392041" onclick="window.ObsHtmlGraph.run(this, '136930158801720164314675243447204392041', 'dvl-gps integration');">
+        <button class="graph_button graph_show_button" id="B112188639998348656991941982701622449521{level}" level="{level}" note_temp_id="112188639998348656991941982701622449521" onclick="window.ObsHtmlGraph.run(this, '112188639998348656991941982701622449521', 'dvl-gps integration');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C136930158801720164314675243447204392041{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C112188639998348656991941982701622449521{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
