@@ -13,11 +13,19 @@
                 <title>Obsidian-Html/Notes</title>
 
                 <!-- Includes -->
-                
-<script src="../../obs.html/static/obsidian_core.js"></script>
+                <script src="../../obs.html/static/obsidian_core.js"></script>
 <script src="../../obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="../../obs.html/static/master.css" />
-<script src="../../obs.html/static/mermaid.9.0.1.min.js"></script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+            'securityLevel': 'loose',
+            'theme': 'dark',
+            'themeVariables': {
+                    'darkMode': true,
+            }
+    });
+</script>
 <script>
   MathJax = {
     loader: {
@@ -45,6 +53,8 @@
 <script src="../../obs.html/static/dirtree.js"></script>
 
 
+
+
                 <!-- Onload tweaks -->
                 <script>
                         const CURRENT_NODE = 'dvl-gps integration';
@@ -70,8 +80,8 @@
                         <div id="search-results"></div>
                     </div>
                     <div id="search-instructions">
-                        <div class="prompt-instruction">
-                                <b>esc</b> to dismiss
+                        <div class="prompt-instruction mobile">
+                            <button onclick="toggle_id('search-master-div');"><b>Close</b> Search </button>
                         </div>
                     </div>
             </div>
@@ -197,7 +207,6 @@
     <label for="cars">Theme </label>
 
     <select name="theme" id="theme" onchange="set_theme(this.value)">
-      <option value="light">light</option>
       <option value="obs-light" selected="selected">obsidian-light</option>
       <option value="obs-dark">obsidian-dark</option>
     </select> 
@@ -207,54 +216,48 @@
                         <div id="left_pane" class="left_pane active">
     <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
     <div id="left_pane_content" class="left_pane_content">
-            <div class="dirtree"><button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">ArduSub</button>
+            <div id="dirtree"><button id="folder-1" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>ArduSub</button>
 <div id="folder-container-1" class="dir-container requires_js " path="../ArduSub">
-	<button id="folder-2" class="dir-button" onclick="toggle_dir(this.id)">TODO</button>
+	<button id="folder-2" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>TODO</button>
 	<div id="folder-container-2" class="dir-container requires_js " path="../ArduSub/TODO">
 		<ul class="dir-list">
-			<li><a class="" href="../ArduSub/TODO/support bar02.html"  >support bar02</a></li>
+			<li><div class="file-icon"></div><a class="" href="../ArduSub/TODO/support bar02.html"  >support bar02</a></li>
 		</ul>
 	</div>
-	<button id="folder-3" class="dir-button" onclick="toggle_dir(this.id)">WIP</button>
+	<button id="folder-3" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>WIP</button>
 	<div id="folder-container-3" class="dir-container requires_js " path="../ArduSub/WIP">
-		<button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">imgs</button>
+		<button id="folder-4" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>imgs</button>
 		<div id="folder-container-4" class="dir-container requires_js " path="../ArduSub/WIP/imgs">
 			<ul class="dir-list">
-				<li><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231106153034.png"  class="external-link">Pasted image 20231106153034</a></li>
-				<li><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231107205942.png"  class="external-link">Pasted image 20231107205942</a></li>
-				<li><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231108111654.png"  class="external-link">Pasted image 20231108111654</a></li>
-				<li><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231129111657.png"  class="external-link">Pasted image 20231129111657</a></li>
+				<li><div class="file-icon non-md-file"></div><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231106153034.png"  class="external-link">Pasted image 20231106153034.png</a></li>
+				<li><div class="file-icon non-md-file"></div><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231107205942.png"  class="external-link">Pasted image 20231107205942.png</a></li>
+				<li><div class="file-icon non-md-file"></div><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231108111654.png"  class="external-link">Pasted image 20231108111654.png</a></li>
+				<li><div class="file-icon non-md-file"></div><a class="" href="../ArduSub/WIP/imgs/Pasted image 20231129111657.png"  class="external-link">Pasted image 20231129111657.png</a></li>
 			</ul>
 		</div>
 		<ul class="dir-list">
-			<li><a class="" href="../ArduSub/WIP/Better Handling.html"  >Better Handling</a></li>
-			<li><a class="" href="../ArduSub/WIP/DVL-GPS integration.html"  >DVL-GPS integration</a></li>
-			<li><a class="" href="../ArduSub/WIP/Diagnosing and fixing yaw drift.html"  >Diagnosing and fixing yaw drift</a></li>
-			<li><a class="" href="../ArduSub/WIP/MAVLink Yaw Input.html"  >MAVLink Yaw Input</a></li>
-			<li><a class="" href="../ArduSub/WIP/MMC issues.html"  >MMC issues</a></li>
-			<li><a class="" href="../ArduSub/WIP/NMEA YAW Input.html"  >NMEA YAW Input</a></li>
-			<li><a class="" href="../ArduSub/WIP/Surface Tracking.html"  >Surface Tracking</a></li>
-		</ul>
-	</div>
-	<button id="folder-5" class="dir-button" onclick="toggle_dir(this.id)">done</button>
-	<div id="folder-container-5" class="dir-container requires_js " path="../ArduSub/done">
-		<ul class="dir-list">
-			<li><a class="" href="../ArduSub/done/Additional buttons and axis.html"  >Additional buttons and axis</a></li>
+			<li><div class="file-icon"></div><a class="" href="../ArduSub/WIP/Better Handling.html"  >Better Handling</a></li>
+			<li><div class="file-icon"></div><a class="" href="../ArduSub/WIP/DVL-GPS integration.html"  >DVL-GPS integration</a></li>
+			<li><div class="file-icon"></div><a class="" href="../ArduSub/WIP/Diagnosing and fixing yaw drift.html"  >Diagnosing and fixing yaw drift</a></li>
+			<li><div class="file-icon"></div><a class="" href="../ArduSub/WIP/MAVLink Yaw Input.html"  >MAVLink Yaw Input</a></li>
+			<li><div class="file-icon"></div><a class="" href="../ArduSub/WIP/MMC issues.html"  >MMC issues</a></li>
+			<li><div class="file-icon"></div><a class="" href="../ArduSub/WIP/NMEA YAW Input.html"  >NMEA YAW Input</a></li>
+			<li><div class="file-icon"></div><a class="" href="../ArduSub/WIP/Surface Tracking.html"  >Surface Tracking</a></li>
 		</ul>
 	</div>
 	<ul class="dir-list">
 	</ul>
 </div>
 <ul class="dir-list">
-	<li><a class="" href="../00000253.bin"  class="external-link">00000253</a></li>
-	<li><a class="" href="../index.html"  >index</a></li>
+	<li><div class="file-icon non-md-file"></div><a class="" href="../00000253.bin"  class="external-link">00000253.bin</a></li>
+	<li><div class="file-icon"></div><a class="" href="../index.html"  >index</a></li>
 </ul>
 </div>
     </div>
 </div>
                         <div class="container">
-                                <embeddedtitle>DVL-GPS integration</embeddedtitle>
-<div class="content"><p>Clydes suggested params don't seem to work well with no gps: <br />
+                                <div class="content"><h1 id="dvl-gps-integration">DVL-GPS integration</h1>
+<p>Clydes suggested params don't seem to work well with no gps: <br />
 <a href="https://github.com/bluerobotics/BlueOS-Water-Linked-DVL/issues/35#issue-1938971715" class="external-link">https://github.com/bluerobotics/BlueOS-Water-Linked-DVL/issues/35#issue-1938971715</a>   </p>
 <p>This script seems to work, needs some more testing and validation. I'll try it in open water soon.   </p>
 <div class="lang-general">
@@ -379,13 +382,17 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A5874995701941365841189200020651257325{level}" class="graph_div"></div>
+    <div id="A158758014147732617749312440258217256089{level}" class="graph_div"></div>
+
+    <div class="graph-instructions" id="D158758014147732617749312440258217256089{level}">
+        Left-click: follow link, Right-click: select node, Scroll: zoom
+    </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B5874995701941365841189200020651257325{level}" level="{level}" note_temp_id="5874995701941365841189200020651257325" onclick="window.ObsHtmlGraph.run(this, '5874995701941365841189200020651257325', 'dvl-gps integration');">
+        <button class="graph_button graph_show_button" id="B158758014147732617749312440258217256089{level}" level="{level}" note_temp_id="158758014147732617749312440258217256089" onclick="window.ObsHtmlGraph.run(this, '158758014147732617749312440258217256089', 'dvl-gps integration');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C5874995701941365841189200020651257325{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C158758014147732617749312440258217256089{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
