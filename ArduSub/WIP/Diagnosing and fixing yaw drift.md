@@ -21,6 +21,7 @@ Create HOME_LAT and HOME_LON parameters in ArduSub.
 ## New solution:
 [allow estimating earth frame fields with no gps](https://github.com/ArduPilot/ardupilot/compare/master...Williangalvani:ardupilot:allow_mag_estimation?expand=1)
 
+https://github.com/ArduPilot/ardupilot/compare/master...Williangalvani:ardupilot:sub-sideways?expand=1
 
 These are apparently already use in AP_Beacon.
 
@@ -41,3 +42,18 @@ make an autotest. disable gps test
 add z gyro bias 
 
 
+
+other notes:
+  - WMM is only populated if Compass Scale is set (full gps-enabled calibration)
+  - WMM is only populated if AUTO_DEC is on
+  - let's try INS_GYR_CAL set to 0 (NEVER)
+
+
+
+
+Debbugin session started at june 10th:
+
+let's keep track of my train of toughts.
+	- I made a test for GBIAS and GBIAS estimation. works fine in SITL
+	- GBIAS_P_NSE is limited in code to 0.5
+	- 
