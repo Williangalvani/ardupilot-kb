@@ -37,7 +37,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
+                "file": "actual burn list/burn list.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "72c0cb34ea8e9ab2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Camera stuff/original boot log.md",
                 "mode": "source",
                 "source": false
               }
@@ -68,15 +80,55 @@
             }
           },
           {
-            "id": "4c2e2dc654082dcb",
+            "id": "6da038a03ec5c910",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "actual burn list/burn list.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1890b1480173dc46",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "actual burn list/burn list.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "58b4e98adca2a057",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "actual burn list/burn list.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "bed9bf5145d361c5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ArduSub/Importing in lua.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -126,7 +178,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 331.5
+    "width": 427.5
   },
   "right": {
     "id": "4043489923abcf86",
@@ -142,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
+                "file": "ArduSub/Importing in lua.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -159,7 +211,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
+                "file": "ArduSub/Importing in lua.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -182,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ArduSub/WIP/Diagnosing and fixing yaw drift.md"
+                "file": "ArduSub/Importing in lua.md"
               }
             }
           }
@@ -203,37 +255,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "81504f4494c5b71e",
+  "active": "bed9bf5145d361c5",
   "lastOpenFiles": [
     "actual burn list/burn list.md",
-    "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
-    "actual burn list/Untitled.md",
-    "ArduSub/WIP/MAVLink Yaw Input.md",
-    "ArduSub/WIP/NMEA YAW Input.md",
-    "ArduSub/TODO/write a scripting backend for baro, use analog reads.md",
-    "ArduSub/TODO/support bar02.md",
+    "ArduSub/Importing in lua.md",
+    "actual burn list/zerotier extension dies after long times.md",
     "ArduSub/TODO/Add poshold test with loss dvl.md",
+    "ArduSub/WIP/Better Handling.md",
+    "ArduSub/TODO/support bar02.md",
+    "ArduSub/TODO/write a scripting backend for baro, use analog reads.md",
+    "blueboat/BlueBoat weird GPS issues troubleshooting.md",
+    "ArduSub/WIP/MMC issues.md",
+    "ArduSub/WIP/NMEA YAW Input.md",
+    "ArduSub/WIP/Surface Tracking.md",
+    "ArduSub/WIP/DVL-GPS integration.md",
+    "Blueos/isolate one core for ardupilot.md",
     "blueboat/NMEA yaw replay.md",
+    "blueboat/put navlight script into parameters repository.md",
+    "2024-06-27.md",
+    "Untitled 1.canvas",
+    "Camera stuff/OpenIPC boot log.md",
+    "Camera stuff/original boot log.md",
+    "Camera stuff/OpenIPC stuff.md",
+    "Untitled.canvas",
+    "ArduSub/WIP/MAVLink Yaw Input.md",
+    "ArduSub/WIP/EKF LEarn.md",
+    "actual burn list/Untitled.md",
+    "ArduSub/WIP/Diagnosing and fixing yaw drift.md",
     "Blueos/pi5.md",
     "Pasted image 20240510162846.png",
     "ArduSub/entrypoint.md",
     "ArduSub/done/Additional buttons and axis.md",
-    "Blueos/isolate one core for ardupilot.md",
-    "blueos-base update/notes.md",
-    "bluesim/pending.md",
-    "bluesim/Cloud-based sim.md",
-    "logviewer/plot position from ekf.md",
-    "ArduSub/Fix the MANUAL_CONTROL Z range issue in a clever way..md",
-    "cameramanager/webrtc signalling.md",
-    "blueboat/try configuring mikrotiks for dhcp.md",
-    "blueboat/put navlight script into parameters repository.md",
-    "actual burn list/NMEA tests for Tony.md",
     "actual burn list",
     "Untitled",
-    "ArduSub/WIP/Surface Tracking.md",
-    "ArduSub/use ardupilot's gripper implementation instead of our own hacked one.md",
-    "blueboat/BlueBoat weird GPS issues troubleshooting.md",
-    "Blueos/Check if mavlink-router has tlog now.md",
     "blueos-base update",
     "sonar sim",
     "Pasted image 20231222012827.png",
