@@ -260,6 +260,7 @@
 <p>Clydes suggested params don't seem to work well with no gps: <br />
 <a href="https://github.com/bluerobotics/BlueOS-Water-Linked-DVL/issues/35#issue-1938971715" class="external-link">https://github.com/bluerobotics/BlueOS-Water-Linked-DVL/issues/35#issue-1938971715</a>   </p>
 <p>This script seems to work, needs some more testing and validation. I'll try it in open water soon.   </p>
+<p>I believe I've seen some position jumps when switching between sources, and that the odometry position didn't end up following the GPS's once we switched away from the GPS, but I'm not 100% sure.   </p>
 <div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code><span class="o">--</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">scripts</span><span class="w"> </span><span class="n">handles</span><span class="w"> </span><span class="n">switching</span><span class="w"> </span><span class="n">between</span><span class="w"> </span><span class="n">surface</span><span class="w"> </span><span class="n">GPS</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">DVL</span><span class="o">.</span>
@@ -382,17 +383,17 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A158758014147732617749312440258217256089{level}" class="graph_div"></div>
+    <div id="A196894042808580777437201921458906298685{level}" class="graph_div"></div>
 
-    <div class="graph-instructions" id="D158758014147732617749312440258217256089{level}">
+    <div class="graph-instructions" id="D196894042808580777437201921458906298685{level}">
         Left-click: follow link, Right-click: select node, Scroll: zoom
     </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B158758014147732617749312440258217256089{level}" level="{level}" note_temp_id="158758014147732617749312440258217256089" onclick="window.ObsHtmlGraph.run(this, '158758014147732617749312440258217256089', 'dvl-gps integration');">
+        <button class="graph_button graph_show_button" id="B196894042808580777437201921458906298685{level}" level="{level}" note_temp_id="196894042808580777437201921458906298685" onclick="window.ObsHtmlGraph.run(this, '196894042808580777437201921458906298685', 'dvl-gps integration');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C158758014147732617749312440258217256089{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C196894042808580777437201921458906298685{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
