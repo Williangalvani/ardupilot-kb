@@ -5,6 +5,8 @@ https://github.com/bluerobotics/BlueOS-Water-Linked-DVL/issues/35#issue-19389717
 
 This script seems to work, needs some more testing and validation. I'll try it in open water soon.
 
+I believe I've seen some position jumps when switching between sources, and that the odometry position didn't end up following the GPS's once we switched away from the GPS, but I'm not 100% sure.
+
 ```
 -- This scripts handles switching between surface GPS and DVL.
 -- It creates a parameter DVL_HDOP_THR, which is the maximum gps_speed_accuracy
